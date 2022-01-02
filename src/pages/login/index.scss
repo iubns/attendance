@@ -1,0 +1,14 @@
+.login-from {
+    width: 40%;
+    min-width: 400px;
+    background-color: #F0F0F0;
+    align-content: center;
+    padding: 1rem;
+    border-radius: 5px;
+
+    //나중에 다른 사람이 알아볼 수 있는가?
+    .MuiFormControl-root {
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
