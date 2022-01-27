@@ -18,20 +18,24 @@ function UserContol (props: IProps){
             let userDataList = await fetch(`http://${process.env.REACT_APP_API_SERVER}/getUserData`)   
             setUserDataList(await userDataList.json())
         }
-    })
+
+        fetchUserDataLisr()
+    },[])
 
     return (
         <div hidden={props.hidden}>
             <TableContainer>
                 <Table>
                     <TableHead>
-                        <TableCell>이름</TableCell>
-                        <TableCell>등급</TableCell>
-                        <TableCell>그룹</TableCell>
-                        <TableCell>비밀번호</TableCell>
+                        <TableRow>
+                            <TableCell>이름</TableCell>
+                            <TableCell>등급</TableCell>
+                            <TableCell>그룹</TableCell>
+                            <TableCell>비밀번호</TableCell>
+                        </TableRow>
                     </TableHead>
                     <TableBody>
-                        {userDataList.map((row) => {
+                        {userDataList.map((row) => (
                             <TableRow
                                 key={row.num}
                             >
@@ -40,9 +44,7 @@ function UserContol (props: IProps){
                                 <TableCell>{row.Class}</TableCell>
                                 <TableCell>{row.PassWord}</TableCell>
                             </TableRow>
-                        })
-
-                        }
+                        ))}
                     </TableBody>
                 </Table>
             </TableContainer>

@@ -15,10 +15,10 @@ export default function AdminPage() {
     <div className='admin-page'>
         <Card className='card'>
           <CardContent className='title-bar'>
-            <Typography variant='h5'>
+            <Typography component={'span'} variant='h5'>
               관리자 화면
             </Typography>
-            <Typography variant='body2'>
+            <Typography component={'span'} variant='body2'>
               <Tabs value={tabIndex} onChange={selectTab}>
                 <Tab label='사용자 설정'/>
                 <Tab label="그룹 설정"/>
